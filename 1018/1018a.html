@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        var a = window.prompt("請輸入帳號");
+        var b = window.prompt("請輸入密碼");
+
+        if (a == "admin" && b == "1234") {
+            console.log("帳密ok");
+        } else if (a == "admin" && b != "1234") {
+            console.log("密碼err");
+        } else if (a != "admin" && b == "1234") {
+            console.log("帳號err");
+        } else {
+            console.log("帳密err");
+        }
+
+    </script>
 </body>
+
 </html>
