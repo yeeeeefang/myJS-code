@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        //不斷彈出輸入視窗，直到 "取消" 結束
+
+        //布林boolean(true false)
+        var i = 0;
+        while (true) {
+            var keyin = window.prompt('請輸入任意內容');
+
+            //按了取消
+            if (keyin == null) {
+                break;//脫離迴圈到迴圈結尾的下一行
+            }
+            //是否有內容
+            // if (keyin == '') {
+            //     alert('不能沒有內容');
+            //     continue;//略過之後的程式碼，回到迴圈開始的位置
+            // }
+
+            //去除空白後，是否有內容
+            //trim() >>>去除資料前後空白(字與字之間的空白不會去除)
+            if(keyin.trim()==''){//去除弄白還有多少長度
+                alert('不能沒有內容');
+                continue;
+            }
+
+            //是否為數字
+            if (isNaN(Number(keyin))) {
+                alert('ERROR 非數字');
+                continue;
+            }
+            i++;
+            // 訊息視窗
+            // window.alert(keyin);
+        }
+        window.alert('輸入結束:共輸入了' + i + '次')
+    </script> -->
+    <script>
+        // 輸出
+        // 及格人數
+        var n = 0;
+        // 不及格人數
+        var i = 0;
+        // 總分
+        var tot = 0;
+        // 總平均(小數兩位)
+        var avg = 0.00;
+
+        while (true) {
+            var score = window.prompt('請輸入任意內容');
+
+            //按了取消
+            if (score == null) {
+                break;//脫離迴圈到迴圈結尾的下一行
+            }
+
+            if (score.trim() == '') {//去除弄白還有多少長度
+                alert('不能沒有內容');
+                continue;
+            }
+
+            //是否為數字
+            if (isNaN(Number(score))) {
+                alert('ERROR 非數字');
+                continue;
+            } else {
+                score = Number(score);//原型態為字串 等比對完再轉為數字    
+            }
+
+            if (score <= 0 || score < 60) {
+                i++;
+            } else {
+                n++;
+            }
+            tot = tot + score;
+        }
+        avg = (tot / (n + i)).toFixed(2);
+        console.log('及格人數' + n + '個')
+        console.log('不及格人數' + i + '個')
+        console.log('總分' + tot + '分')
+        console.log('平均分數' + avg + '分')
+
+    </script>
+</body>
+
+</html>

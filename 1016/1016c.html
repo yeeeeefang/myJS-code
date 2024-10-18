@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        var x = window.prompt('請輸入任意數字');
+        var a = x % 2;
+        if (a == 0) {
+            console.log('是!偶數');
+        } else if (a != 0) {
+            console.log('不是偶數');
+        }
+    </script> -->
+    <script>
+        var x = window.prompt('請輸入數字');
+        // typeof(值)  =>檢測資料型別
+        // Number(值)  =>字串轉數值(保留小數)
+        // parseInt(值)=>字串轉數值(只保留整數，小數會直接被刪除)
+        // console.log(Number(x));
+        if (isNaN(Number(x))) {
+            console.log('非數值，無法判定');
+        } else {
+
+            if (x % 2 == 0) {
+                console.log('是!偶數');
+            } else if (x % 2 != 0) {
+                console.log('不是偶數');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.請輸入單價，數量後，算出小記
+        // 2.小計 >=1000以上，運費為0；否則運費為小計的1%
+
+        // 狀況一
+        // 單價:500
+        // 數量:2
+        // 小計:1000
+        // 運費:0
+
+        // 狀況二
+        // 單價:500
+        // 數量:1
+        // 小計:500
+        // 運費:500*0.1=5
+
+        // var price = window.prompt('商品售價');
+        // var num = window.prompt('商品數量');
+        // var total = price * num;
+        // if (isNaN(Number(price)), isNaN(Number(num))) {
+        //     console.log('非數值，無法判定');
+        // }else if (total >= 1000) {
+        //     console.log('小計:' + total);
+        // } else {
+        //     var f = total * 0.01;
+        //     console.log('小計為' + `${total}+${f}=${total + f}`);
+        // }
+
+        // var price = Number(window.prompt('商品售價'));
+        // var num = Number(window.prompt('商品數量'));
+        // var total = 0;
+        // //邏輯運算子  交集 &&  聯集 ||
+        // if (isNaN(price) || isNaN(num)) {
+        //     console.log('ERROR');
+        // } else {
+        //     var total = price * num;//小計
+        //     var dis = 0;//小費
+        //     if (total >= 1000) {
+        //         console.log('小計:' + total);
+        //     } else {
+        //         var dis = total * 0.01;
+        //         console.log('小計為' + `${total}+${dis}=${total + dis}`);
+        //     }
+        // }
+    </script>
+    <script>
+        var price = Number(window.prompt('商品售價'));
+        var num = Number(window.prompt('商品數量'));
+        var total = 0;
+        //邏輯運算子  交集 &&  聯集 ||  
+        if (isNaN(price) || isNaN(num)) {
+            console.log('ERROR');
+        } else {
+            var total = price * num;//小計
+            var dis = 0;//小費
+            if (total < 1000) {
+                var dis = total * 0.01;
+            }
+            console.log('價格:' + price);
+            console.log('數量:' + num);
+            console.log('小計:' + total);
+            console.log('運費:' + dis);
+            console.log(`'總計:' ${total+dis}`);
+            
+        }
+
+    </script>
+</body>
+
+</html>

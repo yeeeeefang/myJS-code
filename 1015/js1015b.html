@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>變數</title>
+</head>
+
+<body>
+    <!-- 變數 -->
+    <script>
+        // 宣告變數
+        var a = 5;
+        var b = 3;
+        // 5+3=8 拆解
+        // document.write(a);
+        // document.write('+');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a+b);
+        // document.write('<br>');
+
+        // document.write(a + '+' + b + '=' + (a + b));
+        // document.write('<br>');
+        // document.write(a * b + '=' + a + 'x' + b + '<br>');
+        // document.write('<br>');
+    </script>
+
+    <!-- 算術運算子 -->
+    <!-- 
+    + 加
+    - 減
+    * 乘
+    / 取商
+    % 取餘數
+    -->
+    <script>
+        var m = 5;
+        var n = 3;
+        // document.write(m + '+' + n + '=' + (m + n) + '<br>');
+        // document.write(m + '-' + n + '=' + (m - n) + '<br>');
+        // document.write(m + '×' + n + '=' + (m * n) + '<br>');
+        // document.write(m + '÷' + n + '=' + (m / n) + '<br>');
+        // document.write(m + '%' + n + '=' + (m % n) + '<br>');
+        // document.write('<br>');
+
+        // 字串字面值，必須使用反引號(tab上面)包起來，變數前使用${變數名稱or運算式}
+        // document.write(`${m}+${n}=${m + n}<br>`) //5+3=8
+        // document.write(`${m}-${n}=${m - n}<br>`) //5-3=2
+        // document.write(`${m}×${n}=${m * n}<br>`) //5×3=15
+        // document.write(`${m}÷${n}=${m / n}<br>`) //5÷3=1.6666666666666667
+        // document.write(`${m}%${n}=${m % n}<br>`) //5%3=2
+    </script>
+
+    <!-- 判斷式 -->
+    <script>
+        var s = 5;
+        var t = 3;
+        //輸入視窗
+        var c = window.prompt('請輸入運算式符號(+ - * / %):');
+        // ==(不嚴謹的比較) ---> 等號的左右兩邊的資料型態可以不同
+        // ===(嚴謹的比較)  ---> 等號的左右兩邊的資料型態必須不同
+        if (c === '+') {
+            document.write(`${m}+${n}=${m + n}<br>`);
+        } else if (c === '-') {
+            document.write(`${m}-${n}=${m - n}<br>`);
+        } else if (c === '*') {
+            document.write(`${m}*${n}=${m * n}<br>`);
+        } else if (c === '/') {
+            document.write(`${m}/${n}=${m / n}<br>`);
+        } else if (c === '%') {
+            document.write(`${m}%${n}=${m % n}<br>`)
+        } else {
+            document.write('error!無此運算符號' + '<br>');
+        }
+
+        document.write('符號是'+c);
+
+    </script>
+</body>
+
+</html>
