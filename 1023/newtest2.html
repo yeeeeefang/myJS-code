@@ -13,37 +13,56 @@
 
     <script>
         // 2.建立一個函式，傳參數身高h、體重w，算出BMI (公斤/公尺平方)
-        function count() {
-            var p1 = document.getElementById('myP1');
-            var h = 1.6;
-            var w = 65;
-            var BMI =(w/Math.pow(h,2)).toFixed(1);
-            if (BMI < 18.5) {
-                p1.innerHTML = '體重過輕 BMI值為'+BMI;
-            } else if (BMI >= 18.5 && BMI < 24) {
-                p1.innerHTML = '正常範圍 BMI值為'+BMI;
-            } else if (BMI >= 24 && BMI < 27) {
-                p1.innerHTML = '過重 BMI值為'+BMI;
-            } else {
-                alert('異常範圍');
-                if (BMI >= 27 && BMI < 30) {
-                    p1.innerHTML = '輕度肥胖 BMI值為'+BMI;
-                } else if (BMI >= 30 && BMI < 35) {
-                    p1.innerHTML = '中度肥胖 BMI值為'+BMI;
-                } else {
-                    p1.innerHTML = '重度肥胖 BMI值為'+BMI;
-                }
-            }
-        }
-        
-        //老師的
-        // function getBMI(h,w){
-        //     return (w/Math.pow(h/100,2)).toFixed(1);
+        // function count() {
+        //     var p1 = document.getElementById('myP1');
+        //     var h = 1.6;
+        //     var w = 65;
+        //     var BMI =(w/Math.pow(h,2)).toFixed(1);
+        //     if (BMI < 18.5) {
+        //         p1.innerHTML = '體重過輕 BMI值為'+BMI;
+        //     } else if (BMI >= 18.5 && BMI < 24) {
+        //         p1.innerHTML = '正常範圍 BMI值為'+BMI;
+        //     } else if (BMI >= 24 && BMI < 27) {
+        //         p1.innerHTML = '過重 BMI值為'+BMI;
+        //     } else {
+        //         alert('異常範圍');
+        //         if (BMI >= 27 && BMI < 30) {
+        //             p1.innerHTML = '輕度肥胖 BMI值為'+BMI;
+        //         } else if (BMI >= 30 && BMI < 35) {
+        //             p1.innerHTML = '中度肥胖 BMI值為'+BMI;
+        //         } else {
+        //             p1.innerHTML = '重度肥胖 BMI值為'+BMI;
+        //         }
+        //     }
         // }
+    </script>
+
+
+    <p id="p2">BMI結果</p>
+    <button onclick="getBMI(157)">察看結果</button>
+    <script>
+        //老師的
+        function getBMI(h, w) {
+            return (w / Math.pow(h / 100, 2)).toFixed(1);
+        }
         // //呼叫函式並傳值
         // //接收到BMI結果後，依序檢查BMI狀態
-        // var myBmi = getBMI(157,50);
+        var myBmi = getBMI(157, 50);
+        var p2 = document.getElementById('p2');
+        var str1 = '';//存放狀態變數
+
+        if (myBmi < 18.5) {
+            str1 = '體重過輕';
+        } else if (myBmi >= 18.5 && myBmi < 24) {
+            str1 = '正常範圍';
+        } else if (myBmi >= 24 && myBmi < 27) {
+            str1 = '過重';
+        } else {
+            str1 = '異常範圍';
+        }
+        p2.innerHTML = `BMI=${myBmi}=>${str1}`;
     </script>
+
 </body>
 
 </html>

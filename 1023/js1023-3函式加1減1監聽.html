@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="no">1</p>
+    <button onclick="fun1()">+1</button>
+    <button onclick="fun2()">-1</button>
+
+    <script>
+        function fun1() {
+            var p1 = document.getElementById('no');
+            var text = p1.textContent;
+            var number = parseInt(text);
+            p1.innerHTML = number + 1;
+        }
+        function fun2() {
+            var p1 = document.getElementById('no');
+            var text = p1.textContent;
+            var number = parseInt(text);
+            p1.innerHTML = number - 1;
+        }
+    </script>
+
+    <p id="count">1</p>
+    <button onclick="addCount()">+1</button>
+    <button onclick="subCount()">-1</button>
+    <button onclick="getCount('+')">+1</button>
+    <button onclick="getCount('-')">-1</button>
+    <script>
+        //共同使用同一個函式，處理+1，-1
+        function getCount(op) {
+            var count = document.getElementById('count');
+            if (op == '+') {
+                count.innerHTML = String(Number(count.innerHTML) + 1);//轉數值結束後再轉回原本的型態string
+            } else if (op == '-') {
+                count.innerHTML = String(Number(count.innerHTML) - 1);
+            }
+        }
+
+        //+1
+        function addCount() {
+            var c = document.getElementById('count');
+            //typeof(變數或資料或運算式)=>查看資料類型
+            // console.log(typeof(count.innerHTML));
+            count.innerHTML = Number(count.innerHTML) + 1;
+        }
+        //-1
+        function subCount() {
+            var c = document.getElementById('count');
+            count.innerHTML = Number(count.innerHTML) - 1;
+        }
+    </script>
+
+    <!-- 使用監聽事件的方法來呼叫函式 -->
+    <!-- //做監聽事件的按鈕 -->
+    <button id="btn1">sayHi</button>
+
+    <script>
+        var btn1 = document.getElementById('btn1');
+        // btn1.addEventListener('click', sayHi);//點他一下 執行sayHi的函式
+
+        // function sayHi() {
+        //     console.log('Hi');
+        // }
+
+        btn1.addEventListener('click', () => {
+            console.log('Hi');
+        });
+
+
+
+    </script>
+</body>
+
+</html>

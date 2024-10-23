@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p id="myP1">BMI結果</p>
-    <button onclick="getBMI(h,w)">察看結果</button>
+    <button onclick="getBMI(x,y)">察看結果</button>
     <script>
         var x = window.prompt('請輸入體重(公斤)');
         var y = window.prompt('請輸入身高(公尺)');
-        
-        if (isNaN(Number(x))||isNaN(Number(y))) {
-            alert('非數值，無法判定');
-        } else {
 
-            function getBMI(h,w){
-            return (w/Math.pow(h,2)).toFixed(1);
+        if (isNaN(Number(x)) || isNaN(Number(y))) {
+            alert('非數值，無法判定');
+        }
+
+        function getBMI(w, h) {
+            // return5 (w / Math.pow(h, 2)).toFixed(1);
             var p1 = document.getElementById('myP1');
-            var h = x;
-            var w = y;
-            var BMI = w / (Math.pow(h,2));
+            // var h = x;
+            // var w = y;
+            var BMI = w / (Math.pow(h, 2));
             if (BMI < 18.5) {
                 p1.innerHTML = '體重過輕';
             } else if (BMI >= 18.5 && BMI < 24) {
@@ -39,7 +41,8 @@
                 }
             }
         }
-        }
     </script>
+    
 </body>
+
 </html>
