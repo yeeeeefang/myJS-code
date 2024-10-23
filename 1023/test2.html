@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="myP1">BMI結果</p>
+    <button onclick="count()">察看結果</button>
+
+    <script>
+        // 2.建立一個函式，傳參數身高h、體重w，算出BMI (公斤/公尺平方)
+        function count() {
+            var p1 = document.getElementById('myP1');
+            var h = 1.6;
+            var w = 100;
+            var BMI = w / h / h;
+            if (BMI < 18.5) {
+                p1.innerHTML = '體重過輕';
+            } else if (BMI >= 18.5 && BMI < 24) {
+                p1.innerHTML = '正常範圍';
+            } else if (BMI >= 24 && BMI < 27) {
+                p1.innerHTML = '過重';
+            } else if (BMI >= 27 && BMI < 30) {
+                p1.innerHTML = '輕度肥胖';
+            } else if (BMI >= 30 && BMI < 35) {
+                p1.innerHTML = '中度肥胖';
+            } else {
+                p1.innerHTML = '重度肥胖';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
