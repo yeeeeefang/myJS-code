@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="myId">面積多少呢</p>
+    <button onclick="area3()">計算</button>
+    
+
+    <script>
+        //1.建立一個函式，傳參數r
+        //輸入半徑，算出面積 3.14*r*r
+        //回傳面積結果在頁面上的段落1
+        //半徑?圓面積?
+
+        //一般函式
+        function area1() {
+            //取得段落myId
+            var p1 = document.getElementById('myId');
+            var r = 3;  //設定半徑為3
+            var a = (3.14*r*r).toFixed(2);  // 面積參數為a，值取小數點第二位
+            p1.innerHTML = '半徑為'+r+' 面積為'+a;
+        }
+
+        //匿名函式
+        var area2 = function(){
+            var p1 = document.getElementById('myId');
+            var r = 4;  //設定半徑為4
+            var a = (3.14*r*r).toFixed(2);  // 面積參數為a，值取小數點第二位
+            p1.innerHTML = '半徑為'+r+' 面積為'+a;
+        }
+
+        //箭頭函式
+        var area3 =()=>{
+            var p1 = document.getElementById('myId');
+            var r = 8;  //設定半徑為8
+            var a = (3.14*r*r).toFixed(2);  // 面積參數為a，值取小數點第二位
+            p1.innerHTML = '半徑為'+r+' 面積為'+a;
+        }
+
+        // 2.建立一個函式，傳參數身高h、體重w，算出BMI (公尺平方*公斤)
+
+    </script>
+</body>
+
+</html>
