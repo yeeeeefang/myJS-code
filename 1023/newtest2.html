@@ -16,26 +16,33 @@
         function count() {
             var p1 = document.getElementById('myP1');
             var h = 1.6;
-            var w = 100;
-            var BMI = w / h / h;
+            var w = 65;
+            var BMI =(w/Math.pow(h,2)).toFixed(1);
             if (BMI < 18.5) {
-                p1.innerHTML = '體重過輕';
+                p1.innerHTML = '體重過輕 BMI值為'+BMI;
             } else if (BMI >= 18.5 && BMI < 24) {
-                p1.innerHTML = '正常範圍';
+                p1.innerHTML = '正常範圍 BMI值為'+BMI;
             } else if (BMI >= 24 && BMI < 27) {
-                p1.innerHTML = '過重';
+                p1.innerHTML = '過重 BMI值為'+BMI;
             } else {
                 alert('異常範圍');
                 if (BMI >= 27 && BMI < 30) {
-                    p1.innerHTML = '輕度肥胖';
+                    p1.innerHTML = '輕度肥胖 BMI值為'+BMI;
                 } else if (BMI >= 30 && BMI < 35) {
-                    p1.innerHTML = '中度肥胖';
+                    p1.innerHTML = '中度肥胖 BMI值為'+BMI;
                 } else {
-                    p1.innerHTML = '重度肥胖';
+                    p1.innerHTML = '重度肥胖 BMI值為'+BMI;
                 }
             }
         }
-
+        
+        //老師的
+        // function getBMI(h,w){
+        //     return (w/Math.pow(h/100,2)).toFixed(1);
+        // }
+        // //呼叫函式並傳值
+        // //接收到BMI結果後，依序檢查BMI狀態
+        // var myBmi = getBMI(157,50);
     </script>
 </body>
 

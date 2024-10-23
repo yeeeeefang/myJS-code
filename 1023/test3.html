@@ -6,19 +6,39 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="myP1">BMI結果</p>
+    <button onclick="getBMI(h,w)">察看結果</button>
     <script>
-        var x = window.prompt('請輸入體重(KG)');
-        var x = window.prompt('請輸入體重(KG)');
+        var x = window.prompt('請輸入體重(公斤)');
+        var y = window.prompt('請輸入身高(公尺)');
         
-        if (isNaN(Number(x))) {
-            console.log('非數值，無法判定');
+        if (isNaN(Number(x))||isNaN(Number(y))) {
+            alert('非數值，無法判定');
         } else {
 
-            if (x % 2 == 0) {
-                console.log('是!偶數');
-            } else if (x % 2 != 0) {
-                console.log('不是偶數');
+            function getBMI(h,w){
+            return (w/Math.pow(h,2)).toFixed(1);
+            var p1 = document.getElementById('myP1');
+            var h = x;
+            var w = y;
+            var BMI = w / (Math.pow(h,2));
+            if (BMI < 18.5) {
+                p1.innerHTML = '體重過輕';
+            } else if (BMI >= 18.5 && BMI < 24) {
+                p1.innerHTML = '正常範圍';
+            } else if (BMI >= 24 && BMI < 27) {
+                p1.innerHTML = '過重';
+            } else {
+                alert('異常範圍');
+                if (BMI >= 27 && BMI < 30) {
+                    p1.innerHTML = '輕度肥胖';
+                } else if (BMI >= 30 && BMI < 35) {
+                    p1.innerHTML = '中度肥胖';
+                } else {
+                    p1.innerHTML = '重度肥胖';
+                }
             }
+        }
         }
     </script>
 </body>
