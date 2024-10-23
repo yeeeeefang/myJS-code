@@ -24,12 +24,15 @@
                 p1.innerHTML = '正常範圍';
             } else if (BMI >= 24 && BMI < 27) {
                 p1.innerHTML = '過重';
-            } else if (BMI >= 27 && BMI < 30) {
-                p1.innerHTML = '輕度肥胖';
-            } else if (BMI >= 30 && BMI < 35) {
-                p1.innerHTML = '中度肥胖';
             } else {
-                p1.innerHTML = '重度肥胖';
+                alert('異常範圍');
+                if (BMI >= 27 && BMI < 30) {
+                    p1.innerHTML = '輕度肥胖';
+                } else if (BMI >= 30 && BMI < 35) {
+                    p1.innerHTML = '中度肥胖';
+                } else {
+                    p1.innerHTML = '重度肥胖';
+                }
             }
         }
 
