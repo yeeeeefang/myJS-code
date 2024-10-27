@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="textfield" placeholder="輸入你的數字！">
+    <input type="button" id="btn" value="猜猜看">
+    <script>
+        var correctNum = 24;
+        var biggestNum = 100;
+        var smallestNum = 0;
+        window.onload = guessIt;
+        function guessIt() {
+            document.getElementById('btn').onclick = function (evt) {
+                guessAnswer();
+            }
+        }
+        function guessAnswer() {
+            var textNum = document.getElementById('textfield').value;
+            var textToInt = parseInt(textNum);
+
+            // 小於正確數字
+            if (textToInt < correctNum) {
+                alert('oops! 正確數字小於 ' + biggestNum + ' 大於 ' + textToInt + ' !');
+                // 等於正確數字
+            } else if (textToInt == correctNum) {
+                alert('yes! 正確數字就是 ' + correctNum + ' !');
+                // 大於正確數字
+            } else if (textToInt > correctNum) {
+                alert('oops! 正確數字小於 ' + textToInt + ' 大於 ' + smallestNum + ' !');
+                // 非數字
+            } else if (!textToInt) {
+                alert('這是什麼？可以吃嗎？Ψ(￣∀￣)Ψ');
+            }
+
+        }
+    </script>
+</body>
+
+</html>

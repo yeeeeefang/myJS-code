@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>猜數字遊戲</h3>
+    <!-- <p id="result">請輸入數字:</p> -->
+
+    <script>
+        var number = window.prompt('請輸入數字');
+
+        var min = 1;
+        var max = 100;
+        function getRandom(min, max) {
+            var a = Math.floor(Math.random() * max) + min; //取亂數
+            // console.log(`${min}~${max}之間的亂數值為:${a}`);//顯示亂數
+            return a;
+        }
+        var bingo = getRandom(1, 100);
+        alert(bingo);
+        // var result = document.getElementById('result');
+        // result.innerHTML = result.innerHTML + bingo;
+
+        while (true) {
+            var count = 0;
+            if (number > bingo) {
+                count++;
+                max = number - 1;
+                console.log(`第${count}次: ${number}=>太大了(提示:${min}~${max})`);
+            } else if (number< bingo) {
+                count++;
+                min = number + 1;
+                console.log(`第${count}次: ${number}=>太小了(提示:${min}~${max})`);
+            } else {
+                count++;
+                console.log(`第${count}次: ${number}=>猜對了`);
+                break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
