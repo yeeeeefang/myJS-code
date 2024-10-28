@@ -22,17 +22,18 @@
             return a;
         }
         var bingo = getRandom(1, 100);
-        alert(bingo);
+        // alert(bingo);
         // var result = document.getElementById('result');
         // result.innerHTML = result.innerHTML + bingo;
 
         while (true) {
+            // var number = window.prompt('請輸入數字');
             var count = 0;
-            if (number > bingo) {
+            if (number >bingo) {
                 count++;
                 max = number - 1;
                 console.log(`第${count}次: ${number}=>太大了(提示:${min}~${max})`);
-            } else if (number< bingo) {
+            } else if (number<bingo) {
                 count++;
                 min = number + 1;
                 console.log(`第${count}次: ${number}=>太小了(提示:${min}~${max})`);

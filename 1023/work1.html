@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字遊戲</title>
+    <h3>猜數字遊戲</h3>
+</head>
+
+<body>
+    
+    <input type="text" id="textfield" placeholder="輸入你的數字！">
+    <input type="button" id="btn" value="猜猜看">
+
+    <script>
+       var bingo = Math.floor(Math.random() * 100) + 1; // 初始化隨機數字
+        var min = 1;
+        var max = 100;
+        var count = 0;
+
+        window.onload = function () {
+            document.getElementById('btn').onclick = function () {
+                guessNumber();
+            }
+        };
+
+        function guessNumber() {
+            var ans = document.getElementById('textfield').value;
+            var number = parseInt(ans);
+            while(true){
+                if(isNaN(number)) {
+                alert('這不是數字');
+                return; // 結束這次猜測
+            }
+            
+            if (number < bingo) {
+                count++;
+                min = number + 1;
+                console.log(`第${count}次: ${number} => 太小了(提示:${number + 1}~${max})`);
+            } else if (number === bingo) {
+                count++;
+                console.log(`第${count}次: ${number} => 猜對了`);
+                alert(`恭喜！你猜對了！`);
+                // resetGame();
+            } else  {
+                count++;
+                max = number - 1;
+                console.log(`第${count}次: ${number} => 太大了(提示:${min}~${number - 1})`);
+            }
+            break;
+        }
+        }
+    </script>
+</body>
+
+</html>
