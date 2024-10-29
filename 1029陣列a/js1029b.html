@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //交換
+        var a = 5;
+        var b = 3;
+        //a=3,b=5
+        var tmp = a;//tmp=5
+        a = b;      //a=3
+        b = tmp;    //b=5
+
+        //找出陣列中最大值與最小值
+        var arr1 = [5, 60, 3, '123', 90, true, 33, 1, 100];
+        console.log(`處理前:${arr1}`);
+
+        //去除非數值的陣列資料=>保留數值的資料
+        arr1 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                return data; //return後什麼都不寫就是結束，如果有就是回傳那個值
+            }
+        });
+        console.log(`filter方法處理後:${arr1}`);
+
+        //或預設空的陣列arr2，原本陣列不會被破壞
+        var arr2 = [];
+        arr2 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                return data; //return後什麼都不寫就是結束，如果有就是回傳那個值
+            }
+        });
+        console.log(`filter方法處理後:${arr2}`);
+
+
+        //預設最大最小值
+        var max = arr1[0];
+        var min = arr1[0];
+
+        for (i = 0; i < arr1.length; i++) {
+            if (arr1[i] < min) {
+                min = arr1[i];
+            } else if (arr1[i] > max) {
+                var t = max;
+                max = arr1[i];
+            }
+        }
+        document.write(`最大值:${max}，最小值:${min}`);
+
+
+        //原本的方法，上面是加了filter的方法
+        // var max = arr1[0];
+        // var min = arr1[0];
+        // for (i = 0; i < arr1.length; i++) {
+        //     if (typeof arr1[i] === 'number') {
+        //         if (arr1[i] < min) {
+        //             min = arr1[i];
+        //         } else if (arr1[i] > max) {
+        //             var t = max;
+        //             max = arr1[i];
+        //         }
+        //     }
+        // }
+
+
+
+        // document.write(`最大值:${max}，最小值:${min}`);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立變數給值
+        // var book1='HTML';
+        // var book2='CSS';
+        // var book3='JavaScript';
+        // console.log(book1);
+        // console.log(book2);
+        // console.log(book3);
+
+        //建立一維陣列
+        var books = ['HTML', 'CSS', 'JavaScript'/* , '', 100, true, {} */]; //JS 陣列裡面可以有不同形態的變數
+
+        //讀取陣列的樣子
+        console.log(books);
+        console.log(typeof (books)); //看變數型態
+
+        //讀取指定位置的陣列值=>陣列名稱[陣列編號]
+        // console.log(books[1]);
+        // console.log(books[7]);//避免超過索引範圍(陣列編號)，所以回傳undefined
+
+        //改變陣列中現有的值
+        // books[2] = 'JS';
+
+        //寫入陣列中不存在的編號(是允許的)，但只能寫在最後
+        // books[7] = 'abc';
+        // console.log(books[7]);
+
+        //取得陣列長度
+        // console.log(books.length)
+
+        //取出陣列所有值
+        //方法一 for
+        for (var i = 0; i < books.length; i++) {
+            document.write(books[i] + '<br>');
+            console.log(books[i]);
+        }
+        document.write('<hr>');
+
+        //方法二 for of
+        for (var n of books) { //of後面加陣列名稱(指向)
+            document.write(n);
+            document.write('<br>');
+        }
+        document.write('<hr>');
+
+        //方法三 forEach 帶出陣列資料
+        books.forEach((b) => {  //箭頭函式
+            document.write(b);
+            document.write('<br>');
+        });
+        document.write('<hr>');
+
+        //方法四 map
+        books.map((c) => {
+            document.write(c);
+            document.write('<br>');
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
