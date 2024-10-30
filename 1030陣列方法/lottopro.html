@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="1.大樂透">
+    <input type="button" id="btn2" value="2.威力彩">
+    <input type="button" id="btn3" value="3.金彩539">
+    <script>
+        document.getElementById('btn1').onclick = function () { lot(); }
+        document.getElementById('btn2').onclick = function () { www(); }
+        document.getElementById('btn3').onclick = function () { ccc(); }
+        function lot() {
+            var min =1;
+            var max =49;
+            var a =49;
+            all();
+            console.log(`樂透號碼是${arr1}`);
+        }
+        function www() {}
+        function ccc() {}
+        function all(){
+            var arr1 = [];
+            while (arr1.length < 6) {
+                var bingo = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+                // console.log(bingo);
+                if (arr1.includes(bingo) === false) {
+                    arr1.push(bingo);
+                } else {
+                    bingo = Math.floor(Math.random() * max) + min;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>
