@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //亂數大樂透號碼1-49(六個不重複) 一個特別號可以重複 
+        var min = 1;
+        var max = 49;
+        var arr1 = [];
+        for (i = 0; i < 6; i++) {
+            var bingo = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+            if (arr1.includes(bingo) === false) {
+                arr1.push(bingo);
+            }
+        }
+        console.log(`樂透號碼是${arr1}`);
+        var sp = Math.floor(Math.random() * max) + min;
+        console.log(`樂透特別號碼是${sp}`);
+    </script>
+</body>
+
+</html>

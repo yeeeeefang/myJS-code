@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 5, 100, 5,3, 30,5,90];
+        console.log(arr1);
+        // console.log(`第一個5的位置=>${arr1.indexOf(5)}`);
+        // console.log(`最後一個5的位置=>${arr1.lastIndexOf(5)}`);
+        // console.log(`5是否存在=>${arr1.includes(5)}`);
+
+
+        //找出5的位置
+        if(arr1.includes(5)){ //如果是true 不會特別打==true
+            arr1.map((n1,index)=>{
+                if(n1===5){
+                    console.log(index);//索引編號叫index
+                }
+            });
+        }
+
+
+        // //新增陣列值到最後面=>push(值)
+        // arr1.push(88);
+        // console.log(arr1);
+        // //新增值到陣列最前面=>unshift(值)
+        // arr1.unshift(-1);
+        // console.log(arr1);
+
+
+        // //取出陣列中第一個值，第一個值會被保留
+        // console.log(arr1[0]);
+        // console.log(arr1);
+        // //shift()=>取出陣列第一個值，並移除
+        // console.log(arr1.shift());
+        // console.log(arr1);
+
+
+        // //查看陣列中最後一個值，值會被保留
+        // console.log(arr1[arr1.length - 1]);
+        // console.log(arr1);
+        // //pop()=>取出陣列嘴=最後一個值，並且移除
+        // console.log(arr1.pop());
+        // console.log(arr1);
+
+
+        // console.log(`排序前:${arr1}`);
+        // //遞增排序
+        // arr1.sort((a, b) => {
+        //     return a - b; //小到大
+        // });
+        // console.log(`排序後(遞增):${arr1}`);
+        // //遞減排序
+        // arr1.sort((a, b) => {
+        //     return b - a; //大到小
+        // });
+        // console.log(`排序後(遞減):${arr1}`);
+
+        // //反轉方式遞減
+        // console.log(`反轉後的陣列${arr1.reverse()}`);
+    </script>
+</body>
+
+</html>
