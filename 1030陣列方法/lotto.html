@@ -13,18 +13,20 @@
         var min = 1;
         var max = 49;
         var arr1 = [];
-        for (i = 0; i < 6; i++) {
+        while (arr1.length < 6) {
             var bingo = Math.floor(Math.random() * max) + min; // 初始化隨機數字
             console.log(bingo);
             if (arr1.includes(bingo) === false) {
                 arr1.push(bingo);
             }else{
-                i--;
                 bingo = Math.floor(Math.random() * max) + min;
             }
         }
         console.log(`樂透號碼是${arr1}`);
         var sp = Math.floor(Math.random() * max) + min;
+        if (arr1.includes(sp) === true) {
+                bingo = Math.floor(Math.random() * max) + min;
+            }
         console.log(`樂透特別號碼是${sp}`);
     </script>
 </body>
