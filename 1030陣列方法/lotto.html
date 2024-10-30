@@ -18,16 +18,51 @@
             console.log(bingo);
             if (arr1.includes(bingo) === false) {
                 arr1.push(bingo);
-            }else{
+            } else {
                 bingo = Math.floor(Math.random() * max) + min;
             }
         }
         console.log(`樂透號碼是${arr1}`);
         var sp = Math.floor(Math.random() * max) + min;
         if (arr1.includes(sp) === true) {
-                bingo = Math.floor(Math.random() * max) + min;
-            }
+            bingo = Math.floor(Math.random() * max) + min;
+
+        }
+        console.log(sp);
         console.log(`樂透特別號碼是${sp}`);
+    </script>
+
+    <script>
+        //老師的
+        var lott = [];
+        for (var i = 0; i < 6; i++) {
+            //亂數
+            var no = Math.floor(Math.random() * 49) + 1;
+            if (lott.includes(no)) {
+                //有找到=>重複
+                i--;//消除原本已存在的位置
+                continue;
+            } else {
+                //沒找到=>沒有重複
+                lott[i] = no;
+            }
+        }
+
+        console.log(`第一區${lott}`);
+        //特別號
+        while (true){
+            var sno = Math.floor(Math.random() * 49) + 1;
+        
+            if (lott.includes(sno)) {
+                //有找到=>重複
+                continue;
+            } else {
+                //沒找到=>沒有重複
+                lott.push(sno);
+                break;
+            }
+        }
+        console.log(`特別號:${sno}`);
     </script>
 </body>
 

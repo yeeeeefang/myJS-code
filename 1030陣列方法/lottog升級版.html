@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="button" id="btn1" value="1.大樂透">
+<input type="button" id="btn2" value="2.威力彩">
+<input type="button" id="btn3" value="3.金彩539">
+
+<body>
+    <script>
+        document.getElementById('btn1').onclick = function () { lot(); }
+        document.getElementById('btn2').onclick = function () { www(); }
+        document.getElementById('btn3').onclick = function () { ccc(); }
+        
+        //樂透
+        function lot() {
+            var min = 1;
+            var max = 49;
+            var arr1 = [];
+            while (arr1.length < 6) {
+                var bingo = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+                // console.log(bingo);
+                if (arr1.includes(bingo) === false) {
+                    arr1.push(bingo);
+                } else {
+                    bingo = Math.floor(Math.random() * max) + min;
+                }
+            }
+            console.log(`樂透號碼是${arr1}`);
+            var sp = Math.floor(Math.random() * max) + min;
+            if (arr1.includes(sp) === true) {
+                bingo = Math.floor(Math.random() * max) + min;
+
+            }
+            // console.log(sp);
+            console.log(`樂透特別號碼是${sp}`);
+        }
+        //威力採
+        function www() {
+            var min = 1;
+            var max = 38;
+            var w1 = [];
+            while (w1.length < 6) {
+                var ans2 = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+                // console.log(ans2);
+                if (w1.includes(ans2) === false) {
+                    w1.push(ans2);
+                } else {
+                    ans2 = Math.floor(Math.random() * max) + min;
+                }
+            }
+            console.log(`威力彩號碼是${w1}`);
+            var w2 = Math.floor(Math.random() * 8) + 1;
+            if (w1.includes(w2) === true) {
+                ans2 = Math.floor(Math.random() * max) + min;
+
+            }
+            // console.log(w2);
+            console.log(`威力彩特別號碼是${w2}`);
+        }
+        //金彩539
+        function ccc() {
+            var min = 1;
+            var max = 39;
+            var c1 = [];
+            while (c1.length < 5) {
+                var ans3 = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+                // console.log(ans3);
+                if (c1.includes(ans3) === false) {
+                    c1.push(ans3);
+                } else {
+                    ans3 = Math.floor(Math.random() * max) + min;
+                }
+            }
+            console.log(`金彩539號碼是${c1}`);
+        }
+    </script>
+</body>
+
+</html>
