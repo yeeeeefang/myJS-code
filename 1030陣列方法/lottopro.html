@@ -1,40 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input type="button" id="btn1" value="1.大樂透">
     <input type="button" id="btn2" value="2.威力彩">
     <input type="button" id="btn3" value="3.金彩539">
     <script>
-        document.getElementById('btn1').onclick = function () { lot(); }
-        document.getElementById('btn2').onclick = function () { www(); }
-        document.getElementById('btn3').onclick = function () { ccc(); }
-        function lot() {
-            var min =1;
-            var max =49;
-            var a =49;
-            all();
-            console.log(`樂透號碼是${arr1}`);
-        }
-        function www() {}
-        function ccc() {}
-        function all(){
+        document.getElementById('btn1').onclick = function () { getLottNum('大樂透', 6, 49,'Y', 49); }
+        document.getElementById('btn2').onclick = function () { getLottNum('威力彩', 6, 38,'Y', 38); }
+        document.getElementById('btn3').onclick = function () { getLottNum('今彩539', 5, 39,'N'); }
+
+
+        //建立一個通用的函式可以產生號碼
+        function getLottNum(lottname, count, max, secFlag, secCount = 0, secMax = 0) {
             var arr1 = [];
-            while (arr1.length < 6) {
-                var bingo = Math.floor(Math.random() * max) + min; // 初始化隨機數字
+            //第一區號碼
+            while (arr1.length < count) {
+                var bingo = Math.floor(Math.random() * max) + 1; // 初始化隨機數字
                 // console.log(bingo);
                 if (arr1.includes(bingo) === false) {
                     arr1.push(bingo);
                 } else {
-                    bingo = Math.floor(Math.random() * max) + min;
+                    bingo = Math.floor(Math.random() * max) + 1;
                 }
             }
-            
+            console.log(`${lottname}號碼是${arr1}`);
+
+            //第二區號碼
+
+            if (secFlag === 'Y') {
+                while (true) {
+                    var sno = Math.floor(Math.random() * secMax) + 1;
+                    if(lottname === '威力彩'){
+                        //威力彩
+                        break;
+                    }
+                    if (lottname === '大樂透') {
+                        if (arr1.includes(sno)) {
+                            //有找到=>重複
+                            continue;
+                        } else {
+                            //沒找到=>沒重複
+                            arr1.push(sno);
+                            break;
+                        }
+                    } 
+                    
+                }console.log(`${lottname}特別號碼:${sno}`);
+
+            }
+
         }
+
+
+        //呼叫函式，且傳參數
+        // var gameNo = window.prompt('輸入1.2.3');
+        // if (gameNo === '1') {
+        //     //產生大樂透號碼
+        //     getLottNum('大樂透', 6, 49, 'Y', 49);
+        // } else if (gameNo === '2') {
+        //     getLottNum('威力彩', 6, 38, 'Y', 8);
+        // } else if (gameNo === '3') {
+        //     getLottNum('今彩539', 5, 39, 'N');
+        // } else {
+        //     console.log('err');
+        // }
+
+
     </script>
 </body>
+
 </html>
